@@ -32,3 +32,14 @@ function redirectTo(string $url): void {
     header('Location: ' . $url);
     exit;
 }
+
+function seatingPreferenceLabel(string $key): string {
+    $labels = [
+        'main_dining'  => 'Main Dining Room',
+        'window'       => 'Window Seat',
+        'bar'          => 'Bar Seating',
+        'outdoor'      => 'Outdoor Terrace',
+        'private_room' => 'Private Room',
+    ];
+    return $labels[$key] ?? ucfirst(str_replace('_', ' ', $key));
+}
